@@ -14,12 +14,12 @@ $(document).ready(function () {
 function check(csv_text) {
   var data = $.csv.toArrays(csv_text);
   var date = new Date();
-  date.setHours(date.getHours() + TimeZone);
-  var today = date.toJSON().slice(0, 10).replace(/-/g, "/");
-  console.log(today);
-  console.log(data);
   var workedOut = false;
   var redditLink = "";
+
+  date.setHours(date.getHours() + TimeZone);
+  var today = date.toJSON().slice(0, 10).replace(/-/g, "/");
+
   data.forEach((i) => {
     if (i[0] == today && i[1] != "") {
       workedOut = true;
